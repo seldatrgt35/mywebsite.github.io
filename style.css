@@ -1,0 +1,331 @@
+/* Genel Stil Ayarları */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+section {
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Header Stili */
+header {
+    background-color: #000000; 
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #93C5FD; /* Açık mavi */
+}
+
+/* Hakkımda Bölümü */
+#about {
+    background-image: url('background1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px;
+    min-height: 100vh; 
+    position: relative;
+}
+
+.profile-image {
+    position: absolute; 
+    top: 170px; 
+    right: -100px; /* Başlangıçta sağ dışarıda olur */
+    width: 150px; 
+    height: auto;
+    border-radius: 50%;
+    animation: slide-in 5s ease-in-out infinite; /* Sağdan kaydırmalı animasyon */
+}
+@keyframes slide-in {
+    0% {
+        right: -100px; 
+    }
+    50% {
+        right: 50px; 
+    }
+    100% {
+        right: -100px; /* Tekrar dışarı çıkar */
+    }
+}
+ /* Mobilde resmi gizlemek için */
+@media only screen and (max-width: 768px) {
+    .profile-image {
+        display: none;
+    }
+}
+/* Mobilde daha fazla üst boşluk */
+@media only screen and (max-width: 768px) {
+    #about {
+        padding-top: 150px; 
+    }
+}
+
+#about {
+    padding: 120px 40px;
+    background-color: #E5E7EB; 
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+#about img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Projeler Bölümü */
+#projects {
+    position: relative; 
+    background-image: url('background10.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.project {
+    margin: 20px 0;
+    text-align: center; 
+}
+
+.project-image {
+    width: 100px; 
+    height: auto; /* Orantılı boyutlandırma */
+}
+/* Tıklanabilir */
+.project-title {
+    cursor: pointer; 
+}
+
+.project-details {
+    display: none; /* Başlangıçta gizli */
+    margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#projects {
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+#projects h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project p {
+    margin-bottom: 15px;
+}
+
+.project a {
+    color: #1E3A8A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.project a:hover {
+    text-decoration: underline;
+}
+
+/* Beceriler Bölümü */
+#skills {
+    padding: 40px;
+    background-image: url('skills.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    justify-items: center;
+}
+/* Resimlerin bozulmadan sığması için */
+.skill-icon {
+    width: 150px;  
+    height: 150px; 
+    object-fit: cover; 
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.skill-icon:hover {
+    transform: scale(1.1); 
+}
+/* Orta ekranlarda 2 sütun */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+/* Küçük ekranlarda 1 sütun */
+@media (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+#skills h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#skills ul {
+    list-style-type: none;
+}
+
+#skills ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+/* Blog Bölümü */
+#blog {
+    padding: 40px;
+    background-color: #ffffff;
+}
+
+#blog {
+    background-image: url('background11.png'); 
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    padding: 40px; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+#blog article {
+    background-color: rgba(0, 0, 0, 0.7); 
+    margin: 20px 0; 
+    padding: 20px; 
+    border-radius: 5px; 
+}
+
+#blog h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+}
+article h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+article p {
+    margin-bottom: 15px;
+}
+
+article a {
+    color: #1E3A8A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+article a:hover {
+    text-decoration: underline;
+}
+
+/* İletişim Bölümü */
+#contact {
+    padding: 40px;
+    background-color: hsl(0, 0%, 5%);
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+#contact a {
+    color: #1E3A8A;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+footer {
+    background-color: #1E3A8A;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
